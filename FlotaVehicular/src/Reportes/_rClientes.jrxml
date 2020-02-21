@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="795c37eb-b31c-44ee-a02d-cec3ea8226a1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="numdoc" class="java.lang.String"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<parameter name="idcliente" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT TIPODOC,(NDOC +  '  '  + NOMBRE )AS CLIENTE,DIRECCION,TELEFONO,EMAIL,OBRA
+ FROM CLIENTES 
+ WHERE NDOC= $P{numdoc} OR IDCLIENTE=$P{idcliente}]]>
+	</queryString>
+	<field name="TIPODOC" class="java.lang.String"/>
+	<field name="CLIENTE" class="java.lang.String"/>
+	<field name="DIRECCION" class="java.lang.String"/>
+	<field name="TELEFONO" class="java.lang.String"/>
+	<field name="EMAIL" class="java.lang.String"/>
+	<field name="OBRA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="698" y="24" width="100" height="20" uuid="3cb36878-5e43-4f2a-982b-651f8cfc4d88"/>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="214" y="4" width="324" height="40" uuid="ee0ddff2-88f5-45d8-8df5-585b97fb8204"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE CLIENTES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="3" width="802" height="26" uuid="901b7a03-3558-45dc-8339-a2b40853cc74"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+				</box>
+				<staticText>
+					<reportElement x="2" y="4" width="40" height="20" uuid="91ded0ed-d9d4-4b36-b4ab-2f73dd619548"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[T. DOC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="43" y="3" width="168" height="20" uuid="1ec99a50-e36d-4750-a66e-5a47ee0eb25e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[CLIENTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="214" y="4" width="223" height="20" uuid="6890191a-f1e1-400d-8cf8-a9ebce169c84"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[DIRECCIÓN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="439" y="3" width="64" height="20" uuid="1dd3fbaf-4559-45f6-9102-df0db8d6a8e8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[TELÉFONO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="668" y="3" width="130" height="20" uuid="1c79559b-e513-4c0b-8693-f91ea5d082ce"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[OBRA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="506" y="3" width="161" height="20" uuid="8ecef4fa-db5e-45e4-a6b8-08a9d1cb974f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[E-MAIL]]></text>
+				</staticText>
+				<line>
+					<reportElement x="42" y="0" width="1" height="26" uuid="25cc8b30-3170-42d6-91ee-b328a3b7bad7"/>
+				</line>
+				<line>
+					<reportElement x="211" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<line>
+					<reportElement x="437" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<line>
+					<reportElement x="505" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<line>
+					<reportElement x="667" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="3" width="42" height="20" uuid="e723451e-5f93-4a19-861f-acacb6603316"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPODOC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="3" width="168" height="20" uuid="bb0f5e14-3826-4bf9-a69d-a4cb8d3b657c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="3" width="67" height="20" uuid="ccecfc6a-6fab-4f5f-b829-7de4d455a87e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TELEFONO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="3" width="164" height="20" uuid="59b20d95-5779-43e2-b77d-456a6e0fcf8e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="212" y="3" width="225" height="20" uuid="f400740b-5b5f-4d3f-9caa-e84ab5043c93"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="669" y="3" width="129" height="20" uuid="d1ecb088-b663-4b8b-ad82-3a692e1221fa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OBRA}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="42" y="1" width="1" height="23" uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d"/>
+			</line>
+			<line>
+				<reportElement x="211" y="1" width="1" height="23" uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d"/>
+			</line>
+			<line>
+				<reportElement x="437" y="1" width="1" height="23" uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d"/>
+			</line>
+			<line>
+				<reportElement x="506" y="1" width="1" height="23" uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d"/>
+			</line>
+			<line>
+				<reportElement x="668" y="0" width="1" height="23" uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="11" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="679" y="11" width="80" height="20" uuid="7c212460-7c74-4076-955f-7f51c6bf1f4c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="759" y="11" width="40" height="20" uuid="8180095c-36c9-436f-b304-fdf71dcb9950"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

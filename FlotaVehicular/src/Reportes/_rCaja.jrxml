@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c8fcd2fb-fa1f-484c-8b4f-d9ab4d90a7d9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fecha1" class="java.lang.String"/>
+	<parameter name="fecha2" class="java.lang.String"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<parameter name="idapertura" class="java.lang.String"/>
+	<parameter name="username" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT FECHAINICIO,NOMBRE,COMPAÑIA,USERNAME,SALDOINICIAL,SALDO,SALDOFINAL
+ FROM APERTURACAJA
+ WHERE (FECHAINICIO  BETWEEN $P{fecha1} AND $P{fecha2} ) OR USERNAME =$P{username} OR IDAPERTURA = $P{idapertura}]]>
+	</queryString>
+	<field name="FECHAINICIO" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="COMPAÑIA" class="java.lang.String"/>
+	<field name="USERNAME" class="java.lang.String"/>
+	<field name="SALDOINICIAL" class="java.math.BigDecimal"/>
+	<field name="SALDO" class="java.math.BigDecimal"/>
+	<field name="SALDOFINAL" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="690" y="26" width="100" height="20" uuid="3cb36878-5e43-4f2a-982b-651f8cfc4d88"/>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="214" y="5" width="324" height="40" uuid="ee0ddff2-88f5-45d8-8df5-585b97fb8204"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE APERTURA CAJA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="2" width="802" height="26" uuid="901b7a03-3558-45dc-8339-a2b40853cc74"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+				</box>
+				<line>
+					<reportElement x="85" y="0" width="1" height="26" uuid="25cc8b30-3170-42d6-91ee-b328a3b7bad7"/>
+				</line>
+				<line>
+					<reportElement x="568" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<line>
+					<reportElement x="661" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<line>
+					<reportElement x="725" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<staticText>
+					<reportElement x="2" y="0" width="82" height="20" uuid="3605f9ea-ba2b-4ad2-9241-691ce268f162"/>
+					<text><![CDATA[FECHAINICIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="86" y="0" width="112" height="20" uuid="b68e9c75-1e86-4c45-a7a2-4d4899550868"/>
+					<text><![CDATA[NOMBRE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="200" y="0" width="180" height="20" uuid="3d510580-2ab5-49fd-8c63-54518f37b279"/>
+					<text><![CDATA[COMPAÑIA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="380" y="0" width="187" height="20" uuid="453df986-cb7b-4171-bdfa-e49cf8a13748"/>
+					<text><![CDATA[USERNAME]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="572" y="0" width="91" height="20" uuid="33511e01-1b17-4483-b9c8-e74fead4dd92"/>
+					<text><![CDATA[SALDOINICIAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="663" y="0" width="62" height="20" uuid="ce473fe4-1a3e-468a-a6f2-e41c754a4e69"/>
+					<text><![CDATA[SALDO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="731" y="0" width="69" height="20" uuid="a2e9ad7e-0d95-4208-a775-97450e2c0310"/>
+					<text><![CDATA[SALDOFINAL]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<line>
+				<reportElement x="84" y="1" width="1" height="22" uuid="5c658693-823a-4eec-b070-1f647a27eeef"/>
+			</line>
+			<line>
+				<reportElement x="568" y="0" width="1" height="23" uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d"/>
+			</line>
+			<line>
+				<reportElement x="725" y="0" width="1" height="23" uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="4" width="86" height="20" uuid="7f32b7d8-01e9-454f-b71a-86d3ae318c00"/>
+				<textFieldExpression><![CDATA[$F{FECHAINICIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="4" width="112" height="20" uuid="fcf130de-56e4-4973-a3bb-efddec2d6856"/>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="4" width="180" height="20" uuid="7544c8fd-e70d-4563-98de-43ad0322ee0f"/>
+				<textFieldExpression><![CDATA[$F{COMPAÑIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="4" width="187" height="20" uuid="76eb1bc0-9666-4149-93aa-70c93f76386c"/>
+				<textFieldExpression><![CDATA[$F{USERNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="572" y="4" width="91" height="20" uuid="50b4bf93-0b2d-48bb-8ead-f75ed030ccfd"/>
+				<textFieldExpression><![CDATA[$F{SALDOINICIAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="663" y="4" width="62" height="20" uuid="2cf26d73-98af-45b9-8510-7f780cbe458b"/>
+				<textFieldExpression><![CDATA[$F{SALDO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="731" y="4" width="69" height="20" uuid="4dfbdf04-212a-444e-ab43-8350de77bd31"/>
+				<textFieldExpression><![CDATA[$F{SALDOFINAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="679" y="9" width="80" height="20" uuid="7c212460-7c74-4076-955f-7f51c6bf1f4c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="759" y="9" width="40" height="20" uuid="8180095c-36c9-436f-b304-fdf71dcb9950"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

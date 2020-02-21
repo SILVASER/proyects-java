@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d3abfe4d-31e7-4dc0-a5ed-4b498151648c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fecha1" class="java.lang.String"/>
+	<parameter name="fecha2" class="java.lang.String"/>
+	<parameter name="nmatric" class="java.lang.String"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT MATRICULA,MAQUINA,MODELO,MARCA,NUMSERIE,OPERATIVO,RESPONSABLE,FECREGISTRO FROM VEHICULO WHERE (FECREGISTRO BETWEEN $P{fecha1} AND $P{fecha2}) OR  MATRICULA = $P{nmatric}]]>
+	</queryString>
+	<field name="MATRICULA" class="java.lang.String"/>
+	<field name="MAQUINA" class="java.lang.String"/>
+	<field name="MODELO" class="java.lang.String"/>
+	<field name="MARCA" class="java.lang.String"/>
+	<field name="NUMSERIE" class="java.lang.String"/>
+	<field name="OPERATIVO" class="java.lang.String"/>
+	<field name="RESPONSABLE" class="java.lang.String"/>
+	<field name="FECREGISTRO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ee0ddff2-88f5-45d8-8df5-585b97fb8204" x="265" y="7" width="324" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE VEHICULOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3cb36878-5e43-4f2a-982b-651f8cfc4d88" x="691" y="47" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<frame>
+				<reportElement uuid="901b7a03-3558-45dc-8339-a2b40853cc74" x="0" y="2" width="802" height="26"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+				</box>
+				<staticText>
+					<reportElement uuid="91ded0ed-d9d4-4b36-b4ab-2f73dd619548" x="2" y="3" width="86" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[MATRICULA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="1ec99a50-e36d-4750-a66e-5a47ee0eb25e" x="89" y="4" width="120" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[MAQUINA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6890191a-f1e1-400d-8cf8-a9ebce169c84" x="210" y="4" width="94" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[MODELO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="1dd3fbaf-4559-45f6-9102-df0db8d6a8e8" x="374" y="3" width="72" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[N° SERIE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="25b73cfb-c544-4071-b29d-e54fdab50412" x="518" y="4" width="190" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[RESPONSABLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="1c79559b-e513-4c0b-8693-f91ea5d082ce" x="710" y="3" width="91" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[FECHA REGISTRO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8ecef4fa-db5e-45e4-a6b8-08a9d1cb974f" x="446" y="3" width="71" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[OPERATIVO]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="25cc8b30-3170-42d6-91ee-b328a3b7bad7" x="88" y="0" width="1" height="26"/>
+				</line>
+				<line>
+					<reportElement uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6" x="209" y="0" width="1" height="26"/>
+				</line>
+				<line>
+					<reportElement uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6" x="301" y="0" width="1" height="26"/>
+				</line>
+				<line>
+					<reportElement uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6" x="446" y="0" width="1" height="26"/>
+				</line>
+				<line>
+					<reportElement uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6" x="517" y="0" width="1" height="26"/>
+				</line>
+				<line>
+					<reportElement uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6" x="709" y="0" width="1" height="26"/>
+				</line>
+				<staticText>
+					<reportElement uuid="8401e13e-1c12-4c34-82e0-8a1b101075d2" x="302" y="3" width="72" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[MARCA]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6" x="375" y="0" width="1" height="26"/>
+				</line>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<textField>
+				<reportElement uuid="c5e4728b-b2a1-4d43-a91d-72b0124f297a" x="2" y="3" width="87" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MATRICULA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="033901d4-b0ea-4f9f-b59b-27d05ead5743" x="88" y="3" width="121" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MAQUINA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="51192e32-8f40-45f2-935f-93ac92e4e74a" x="210" y="3" width="91" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MODELO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0b7ef2b7-f352-4410-8de3-6a41793fbf11" x="301" y="3" width="75" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MARCA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ac6526ca-3571-4434-b9e7-906c4cc69989" x="375" y="3" width="72" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMSERIE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="89cc3a6e-75f3-4bcb-baf1-47052546a294" x="446" y="3" width="72" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OPERATIVO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="22904166-3253-45de-b8b3-9c1075f2f2f9" x="518" y="3" width="190" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RESPONSABLE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="68c7ad5f-2edc-4d91-8c1b-c3e553e9b000" x="708" y="3" width="93" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECREGISTRO}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d" x="87" y="4" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d" x="209" y="4" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d" x="300" y="4" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d" x="375" y="3" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d" x="447" y="4" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d" x="518" y="4" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement uuid="251ab4c9-8294-44d1-9abe-fa64b1504a8d" x="709" y="3" width="1" height="20"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="46" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement uuid="8180095c-36c9-436f-b304-fdf71dcb9950" x="757" y="22" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7c212460-7c74-4076-955f-7f51c6bf1f4c" x="677" y="22" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="991ff6db-a468-4db7-9406-8426a9f3daf0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="FECHAACTUAL" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Dani\\Documents\\NetBeansProjects\\FlotaVehicular\\src\\REPORTECHECKLIST\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CODIGO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ACTIVIDAD,FECHA,TURNO,HORA,UNIDAD,CONDUCTOR,TECNICO,MARCA
+FROM INSPECCION WHERE CODIGO =$P{CODIGO}  AND FECHA=$P{FECHA}]]>
+	</queryString>
+	<field name="ACTIVIDAD" class="java.lang.String"/>
+	<field name="FECHA" class="java.lang.String"/>
+	<field name="TURNO" class="java.lang.String"/>
+	<field name="HORA" class="java.lang.String"/>
+	<field name="UNIDAD" class="java.lang.String"/>
+	<field name="CONDUCTOR" class="java.lang.String"/>
+	<field name="TECNICO" class="java.lang.String"/>
+	<field name="MARCA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ee0ddff2-88f5-45d8-8df5-585b97fb8204" x="93" y="3" width="324" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INSPECCIÓN DE PRE - USO DE EQUIPO MÓVIL]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="94f8a955-34b0-4a57-820f-e3c7941a2950" x="445" y="8" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FECHAACTUAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b11c4466-5ea8-492f-989b-9bf10c25bb8d" x="265" y="71" width="156" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TECNICO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="36d621fe-ed75-413f-8589-148b816104bf" x="18" y="31" width="61" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTIVIDAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dcda8e4-98ea-4845-907e-507bb4959090" x="215" y="71" width="50" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TECNICO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a494d483-50c3-453f-8fb0-eb2ffcf0cd16" x="265" y="51" width="64" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TURNO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a2e44a3a-17e1-459e-941d-2c4a70b02bc8" x="79" y="31" width="466" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACTIVIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="baa0acc1-0454-4799-bd62-531671caa57a" x="79" y="51" width="136" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="33ffebd7-6b9d-48fa-b9a4-646d28ef9876" x="79" y="71" width="136" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CONDUCTOR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="72a9879d-c3eb-40cd-af8f-532adfb67158" x="215" y="51" width="50" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TURNO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3d24f038-6cd1-4c85-b7fb-230c067df1d3" x="476" y="51" width="69" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{UNIDAD}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f67f3062-e9bb-44ba-9716-1c621b295bba" x="34" y="51" width="45" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="00ae5794-2065-4611-8b1b-6bbc08995b64" x="429" y="71" width="43" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MARCA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fa358f67-89d0-44c0-b4e2-ec383753b075" x="8" y="71" width="71" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONDUCTOR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3ed86579-2faf-4b36-997b-52f652d614ff" x="476" y="71" width="69" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MARCA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0f3bafd2-784b-4a5a-a002-6eb481687436" x="365" y="51" width="56" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HORA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f949c677-0a56-49c6-90e9-00315345d738" x="329" y="51" width="36" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="45c40bc0-e1f3-40a5-893d-565686d37a1d" x="429" y="51" width="45" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIDAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fa358f67-89d0-44c0-b4e2-ec383753b075" x="74" y="103" width="71" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CORRECTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fa358f67-89d0-44c0-b4e2-ec383753b075" x="145" y="103" width="26" height="15"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fa358f67-89d0-44c0-b4e2-ec383753b075" x="271" y="103" width="26" height="15"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fa358f67-89d0-44c0-b4e2-ec383753b075" x="200" y="103" width="71" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO TIENE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="474">
+			<subreport>
+				<reportElement uuid="87c7861b-b092-472e-b9f2-dbd41bbee1b2" x="171" y="0" width="200" height="218"/>
+				<subreportParameter name="CODIGO">
+					<subreportParameterExpression><![CDATA[$P{CODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CAMIONCISTERNA.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="b73d9add-d65d-4126-9daf-77b5e423b464" x="173" y="218" width="200" height="136"/>
+				<subreportParameter name="CODIGO">
+					<subreportParameterExpression><![CDATA[$P{CODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CARRETA.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="482b2209-120a-4648-9430-abac7f4cac78" x="371" y="0" width="184" height="263"/>
+				<subreportParameter name="CODIGO">
+					<subreportParameterExpression><![CDATA[$P{CODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "CAMIONETAS.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="a3173048-974f-4743-9599-170bf550b3b9" x="371" y="263" width="184" height="211"/>
+				<subreportParameter name="CODIGO">
+					<subreportParameterExpression><![CDATA[$P{CODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "VOLQUETES.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="5a732e48-904a-4cd0-9e45-8e0708cf04e5" x="2" y="1" width="171" height="473"/>
+				<subreportParameter name="CODIGO">
+					<subreportParameterExpression><![CDATA[$P{CODIGO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "TRACTO.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="14"/>
+	</pageFooter>
+</jasperReport>

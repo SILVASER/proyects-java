@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6c20a023-3695-4c21-8c3b-2cba7103cf72">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+        
+        
+	<parameter name="matricula" class="java.lang.String"/>
+	<parameter name="placa" class="java.lang.String"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[  SELECT MATRICULA,TIPOVEHICULO,MARCA,MODELO,PLACA,STOCK,COSTEALQUILER,ESTADO,FECHACOMPRA
+ FROM VEHICULOSALQUILER WHERE ESTADO='DISPONIBLE' OR MATRICULA=$P{matricula} OR PLACA =$P{placa} ]]>
+	</queryString>
+	<field name="MATRICULA" class="java.lang.String"/>
+	<field name="TIPOVEHICULO" class="java.lang.String"/>
+	<field name="MARCA" class="java.lang.String"/>
+	<field name="MODELO" class="java.lang.String"/>
+	<field name="PLACA" class="java.lang.String"/>
+	<field name="STOCK" class="java.lang.Integer"/>
+	<field name="COSTEALQUILER" class="java.math.BigDecimal"/>
+	<field name="ESTADO" class="java.lang.String"/>
+	<field name="FECHACOMPRA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="241" y="8" width="400" height="40" uuid="ee0ddff2-88f5-45d8-8df5-585b97fb8204"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE  DE VEHICULOS DISPONIBLES  PARA ALQUILER]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="690" y="40" width="100" height="20" uuid="3cb36878-5e43-4f2a-982b-651f8cfc4d88"/>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="3" width="802" height="26" uuid="901b7a03-3558-45dc-8339-a2b40853cc74"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+				</box>
+				<staticText>
+					<reportElement x="2" y="4" width="97" height="20" uuid="91ded0ed-d9d4-4b36-b4ab-2f73dd619548"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[MATRICULA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="100" y="4" width="127" height="20" uuid="1ec99a50-e36d-4750-a66e-5a47ee0eb25e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[TIPO VEHICULO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="228" y="4" width="109" height="20" uuid="6890191a-f1e1-400d-8cf8-a9ebce169c84"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[MARCA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="512" y="2" width="48" height="20" uuid="1dd3fbaf-4559-45f6-9102-df0db8d6a8e8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[STOCK]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="621" y="2" width="100" height="20" uuid="25b73cfb-c544-4071-b29d-e54fdab50412"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[ESTADO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="722" y="3" width="80" height="20" uuid="1c79559b-e513-4c0b-8693-f91ea5d082ce"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[FECHA COMPRA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="562" y="3" width="57" height="20" uuid="8ecef4fa-db5e-45e4-a6b8-08a9d1cb974f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[COSTO]]></text>
+				</staticText>
+				<line>
+					<reportElement x="99" y="0" width="1" height="26" uuid="25cc8b30-3170-42d6-91ee-b328a3b7bad7"/>
+				</line>
+				<line>
+					<reportElement x="227" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<line>
+					<reportElement x="510" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<line>
+					<reportElement x="560" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<line>
+					<reportElement x="620" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<line>
+					<reportElement x="721" y="0" width="1" height="26" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+				</line>
+				<staticText>
+					<reportElement x="338" y="3" width="100" height="20" uuid="76cb4ea4-1f48-4a33-be6f-37d7b9bcdcaa"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[MODELO]]></text>
+				</staticText>
+				<line>
+					<reportElement x="438" y="0" width="1" height="26" uuid="25cc8b30-3170-42d6-91ee-b328a3b7bad7"/>
+				</line>
+				<staticText>
+					<reportElement x="438" y="4" width="72" height="20" uuid="ef1a7362-84ca-4201-a2b6-be5af7d12f94"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[PLACA]]></text>
+				</staticText>
+				<line>
+					<reportElement x="336" y="0" width="1" height="26" uuid="87f09f88-7cf0-4d6a-943d-1c52a8a67eba"/>
+				</line>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="3" width="97" height="20" uuid="493f9281-3e73-4bae-881f-7e4ec985559c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MATRICULA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="3" width="127" height="20" uuid="ffc387d5-6fe6-4c12-89b0-0c11f51962df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPOVEHICULO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="3" width="109" height="20" uuid="a98d6299-075e-410d-a825-c2b1773e24b9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MARCA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="511" y="3" width="49" height="20" uuid="243180f7-beee-478b-990a-a163af768b9d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STOCK}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="562" y="3" width="59" height="20" uuid="b81b718d-f62f-4f5e-a8bf-c32ef0c46cb1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COSTEALQUILER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="621" y="3" width="99" height="20" uuid="6bfd4f86-8d17-4d6b-9029-4882cabf6d6f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ESTADO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="720" y="3" width="82" height="20" uuid="59cf9ad7-49af-4256-9691-45f4039adede"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHACOMPRA}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="99" y="3" width="1" height="20" uuid="a2b355c8-b3d7-4e6f-9bb7-8e9eca0826c6"/>
+			</line>
+			<line>
+				<reportElement x="226" y="0" width="1" height="23" uuid="87f09f88-7cf0-4d6a-943d-1c52a8a67eba"/>
+			</line>
+			<textField>
+				<reportElement x="339" y="3" width="100" height="20" uuid="a118d949-d073-41aa-8204-acdc580950aa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MODELO}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="337" y="2" width="1" height="21" uuid="87f09f88-7cf0-4d6a-943d-1c52a8a67eba"/>
+			</line>
+			<line>
+				<reportElement x="439" y="3" width="1" height="20" uuid="87f09f88-7cf0-4d6a-943d-1c52a8a67eba"/>
+			</line>
+			<line>
+				<reportElement x="510" y="3" width="1" height="20" uuid="87f09f88-7cf0-4d6a-943d-1c52a8a67eba"/>
+			</line>
+			<line>
+				<reportElement x="560" y="2" width="1" height="20" uuid="87f09f88-7cf0-4d6a-943d-1c52a8a67eba"/>
+			</line>
+			<line>
+				<reportElement x="619" y="3" width="1" height="20" uuid="87f09f88-7cf0-4d6a-943d-1c52a8a67eba"/>
+			</line>
+			<line>
+				<reportElement x="721" y="3" width="1" height="20" uuid="87f09f88-7cf0-4d6a-943d-1c52a8a67eba"/>
+			</line>
+			<textField>
+				<reportElement x="440" y="4" width="70" height="20" uuid="e80d7a31-73e5-4332-b7bf-53599347c7b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PLACA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="758" y="14" width="40" height="20" uuid="8180095c-36c9-436f-b304-fdf71dcb9950"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="678" y="14" width="80" height="20" uuid="7c212460-7c74-4076-955f-7f51c6bf1f4c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

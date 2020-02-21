@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2a6f1849-ebe1-49c7-a476-f866167fa291">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+        
+	<parameter name="fecha1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<parameter name="operador" class="java.lang.String"/>
+	<parameter name="idvehiculo" class="java.lang.String"/>
+	<parameter name="placa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT idvehiculo,fechasalida,turno,placa,operador,nparte,cliente,obra,viajes,supervisor
+FROM ENTRADA_SALIDAMP
+WHERE (fechaSalida BETWEEN $P{fecha1} AND $P{fecha2}) OR operador = $P{operador} OR placa= $P{placa} OR idvehiculo= $P{idvehiculo}]]>
+	</queryString>
+	<field name="idvehiculo" class="java.lang.String"/>
+	<field name="fechasalida" class="java.lang.String"/>
+	<field name="turno" class="java.lang.String"/>
+	<field name="placa" class="java.lang.String"/>
+	<field name="operador" class="java.lang.String"/>
+	<field name="nparte" class="java.lang.String"/>
+	<field name="cliente" class="java.lang.String"/>
+	<field name="obra" class="java.lang.String"/>
+	<field name="viajes" class="java.lang.String"/>
+	<field name="supervisor" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="224" y="4" width="389" height="40" uuid="ee0ddff2-88f5-45d8-8df5-585b97fb8204"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE SALIDA DE MAQUINARIA PESADA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="700" y="26" width="100" height="20" uuid="3cb36878-5e43-4f2a-982b-651f8cfc4d88"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<frame>
+				<reportElement x="-11" y="2" width="825" height="26" uuid="901b7a03-3558-45dc-8339-a2b40853cc74"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+				</box>
+				<staticText>
+					<reportElement x="2" y="0" width="62" height="20" uuid="225094c0-f964-4137-b1ec-63c3f34b38bd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[ID VEHÍCULO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="65" y="0" width="77" height="20" uuid="548c62b2-62e2-426d-8356-20cba2b3417b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[FECHA SALIDA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="142" y="0" width="45" height="20" uuid="cef62ec1-7bef-4b8a-a18a-f746b5f32a09"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[TURNO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="187" y="0" width="62" height="20" uuid="828070ca-5e79-4cce-9bff-074f93cfc25f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[PLACA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="296" y="0" width="93" height="20" uuid="a3a0ddc0-8c3c-4be4-bbc3-5ae696da9a6b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[OPERADOR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="389" y="0" width="142" height="20" uuid="2b63c357-d02f-46f7-94d3-1b99451e853c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[CLIENTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="531" y="0" width="193" height="20" uuid="46e17be0-1f63-426a-bb94-4d1ed87b5257"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[OBRA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="724" y="0" width="33" height="20" uuid="ea4a9057-bf10-4ea5-883d-6ebe3bc5f47f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[VIAJES]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="757" y="0" width="67" height="20" uuid="32766c5b-5346-4444-8ea4-3f1ee736f581"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[SUPERVISOR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="249" y="0" width="47" height="20" uuid="1b3cc438-a1d9-4896-914c-7bd61ecf607a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[N° PARTE]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="-9" y="5" width="62" height="20" uuid="bce8b74d-cf22-4910-8830-f488518a1546"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idvehiculo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="5" width="77" height="20" uuid="22f56fa0-f081-40a1-aa00-b6081cb7c5a8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechasalida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="5" width="45" height="20" uuid="454d611b-5dff-4b44-8fa1-b5adbfb18ee5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{turno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="5" width="62" height="20" uuid="e1aa76df-dcdd-45c9-8caf-0f7d229b0774"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="5" width="93" height="20" uuid="13ebacdb-964f-4a18-965e-60b2a5f9d4bc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{operador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="5" width="142" height="20" uuid="d79240fd-7741-4126-ab07-dbf847f5fd19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="5" width="193" height="20" uuid="2df6d458-afb5-47ce-99eb-f45e52185ccb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{obra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="713" y="5" width="33" height="20" uuid="3a058d7c-4338-496b-8726-1703905e6557"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{viajes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="746" y="5" width="67" height="20" uuid="e1fbb7da-51b0-4b83-a0cf-faf9ce901045"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supervisor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="5" width="47" height="20" uuid="07905e7e-da3f-4b33-9e3d-3396ae281965"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nparte}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="46" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="12" width="40" height="20" uuid="8180095c-36c9-436f-b304-fdf71dcb9950"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="682" y="12" width="80" height="20" uuid="7c212460-7c74-4076-955f-7f51c6bf1f4c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2a6f1849-ebe1-49c7-a476-f866167fa291">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechaActual" class="java.lang.String"/>
+	<parameter name="idvehiculo" class="java.lang.String"/>
+	<parameter name="conductor" class="java.lang.String"/>
+	<parameter name="placatracto" class="java.lang.String"/>
+	<parameter name="placacarreta" class="java.lang.String"/>
+	<parameter name="destino" class="java.lang.String"/>
+	<parameter name="fecha1" class="java.lang.String"/>
+	<parameter name="fecha2" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT fechasalida,conductor,placatracto,placacarreta,destino,productoida,productoRetorno,precioViaje
+FROM ENTRADA_SALIDAVHT
+WHERE (fechaSalida BETWEEN $P{fecha1} AND $P{fecha2}) OR conductor = $P{conductor} OR placatracto= $P{placatracto} OR placacarreta = $P{placacarreta} OR destino= $P{destino} OR idvehiculo=$P{idvehiculo}]]>
+	</queryString>
+	<field name="fechasalida" class="java.lang.String"/>
+	<field name="conductor" class="java.lang.String"/>
+	<field name="placatracto" class="java.lang.String"/>
+	<field name="placacarreta" class="java.lang.String"/>
+	<field name="destino" class="java.lang.String"/>
+	<field name="productoida" class="java.lang.String"/>
+	<field name="productoRetorno" class="java.lang.String"/>
+	<field name="precioViaje" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="224" y="4" width="389" height="40" uuid="ee0ddff2-88f5-45d8-8df5-585b97fb8204"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE SALIDA DE VEHICULOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="700" y="26" width="100" height="20" uuid="3cb36878-5e43-4f2a-982b-651f8cfc4d88"/>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<frame>
+				<reportElement x="-11" y="2" width="825" height="26" uuid="901b7a03-3558-45dc-8339-a2b40853cc74"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#CC0000"/>
+				</box>
+				<staticText>
+					<reportElement x="2" y="0" width="75" height="20" uuid="632da0b8-edd7-4e7e-8eb4-1da1c7460697"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[FECHA SALIDA	]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="77" y="0" width="172" height="20" uuid="9a7894a3-cb71-4386-85a0-cc3b1368da95"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[CONDUCTOR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="250" y="0" width="65" height="20" uuid="981307ce-9da2-49ca-9895-02d536176df2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[PLC TRACTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="317" y="0" width="73" height="20" uuid="c40fd58c-8282-43e4-bd76-8d4bbd89d602"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[PLC.CARRETA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="391" y="0" width="136" height="20" uuid="6f27209d-c26b-41f3-bfdd-85b79e1196cc"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[DESTINO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="529" y="0" width="121" height="20" uuid="36a53601-c6d4-4dd9-96b2-abc02fcf67d2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[PRODUCTO IDA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="650" y="0" width="112" height="20" uuid="2a53303b-98a3-43e2-b3bc-aef7b4d94b24"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[PRODUCTO RETORNO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="762" y="0" width="63" height="20" uuid="f1270ac7-2b0d-4252-896a-01d40ac9cbe4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<text><![CDATA[PRC.VIAJE]]></text>
+				</staticText>
+				<line>
+					<reportElement x="80" y="1" width="1" height="21" uuid="1e9efa1b-30b4-4d33-a22f-38d733a71ee5"/>
+				</line>
+				<line>
+					<reportElement x="250" y="1" width="1" height="21" uuid="22518216-d956-4497-bb78-46230bd8a7c1"/>
+				</line>
+				<line>
+					<reportElement x="317" y="1" width="1" height="21" uuid="290fe004-cf26-4c6e-a4c4-0a3a8ac76281"/>
+				</line>
+				<line>
+					<reportElement x="391" y="1" width="1" height="21" uuid="25cc8b30-3170-42d6-91ee-b328a3b7bad7"/>
+				</line>
+				<line>
+					<reportElement x="528" y="1" width="1" height="21" uuid="efe4df73-10af-4101-adb1-88779a8af2ec"/>
+				</line>
+				<line>
+					<reportElement x="650" y="0" width="1" height="21" uuid="ab6caa2a-510f-44e4-8bf0-866f2fdc3a99"/>
+				</line>
+				<line>
+					<reportElement x="762" y="1" width="1" height="21" uuid="4ffe4885-9a6a-45ea-acf1-ba85920c6846"/>
+				</line>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="-9" y="6" width="75" height="20" uuid="445a151c-0e73-4337-8319-f532130d3401"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fechasalida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="6" width="172" height="20" uuid="6a7a4283-f7fd-4459-880e-bf4bd4908f67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{conductor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="6" width="65" height="20" uuid="675dbd5b-d2fd-4642-a62e-ff1b7f2dc7cc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{placatracto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="6" width="73" height="20" uuid="142f8741-a447-4cd3-97b5-a8f210f5fe12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{placacarreta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="6" width="136" height="20" uuid="66cfaa68-49f1-42b6-a6db-f4a9a389a61d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{destino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="518" y="6" width="119" height="20" uuid="d6821037-03eb-40f7-91d6-6af05bea42f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{productoida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="6" width="109" height="20" uuid="5ef9bf0c-32ac-496d-834e-ee37e7da6a75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{productoRetorno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="751" y="6" width="63" height="20" uuid="f5d70c45-eb34-4acb-b8c5-67bec87c4950"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{precioViaje}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="69" y="3" width="1" height="21" uuid="1482b01c-aeca-4629-be0b-d050482bdcab"/>
+			</line>
+			<line>
+				<reportElement x="237" y="5" width="1" height="21" uuid="f252fdd0-a75a-4be4-8533-59a96a15bb45"/>
+			</line>
+			<line>
+				<reportElement x="305" y="5" width="1" height="21" uuid="67a9952d-7572-4531-91ea-1f58814ad978"/>
+			</line>
+			<line>
+				<reportElement x="380" y="5" width="1" height="21" uuid="58f8edbe-554e-4834-ba3c-1b6e5d83b599"/>
+			</line>
+			<line>
+				<reportElement x="517" y="3" width="1" height="21" uuid="5a23bddd-b9dd-4ce2-af83-d4ebcd05c529"/>
+			</line>
+			<line>
+				<reportElement x="639" y="4" width="1" height="21" uuid="294b0ae2-e6ae-47a4-88dc-2b513c5168bb"/>
+			</line>
+			<line>
+				<reportElement x="751" y="4" width="1" height="21" uuid="682d81b7-7aca-44cd-8120-cbb223741a91"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="12" width="40" height="20" uuid="8180095c-36c9-436f-b304-fdf71dcb9950"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="682" y="12" width="80" height="20" uuid="7c212460-7c74-4076-955f-7f51c6bf1f4c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
