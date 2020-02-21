@@ -1,0 +1,107 @@
+/*
+    Created on : 09/11/2017, 09:41:30 AM
+    Author     : Dani
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #ffs;
+}
+
+table{
+
+    text-align: center;
+}
+
+.letra{
+    font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: #333333;
+    /*#0078DE*/
+
+    line-height: 20px;
+}
+.getF{
+    font-family:"Segoe UI Semilight", "Segoe WP Semilight", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: #0078d7;
+    line-height: 20px;
+}
+
+.getV{
+    font-family: wf_segoe-ui_semilight, "Segoe UI Semilight", "Segoe WP Semilight", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: #d70000;
+    line-height: 20px;
+}
+
+.getPC{
+    font-family: wf_segoe-ui_semilight, "Segoe UI Semilight", "Segoe WP Semilight", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: #666666;
+    line-height: 20px;
+}
+
+/*============================*/
+
+@media screen and (max-width: 860px){
+
+    .letra{
+        font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+        font-style: normal;
+        font-size: 12px;
+        color: #333333;
+        line-height: 20px;
+    }
+    
+    .getF{
+        font-family:"Segoe UI Semilight", "Segoe WP Semilight", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+        font-style: normal;
+        font-size: 10px;
+        color: #0060d7;
+        line-height: 20px;
+    }
+
+    .getV{
+        font-family: wf_segoe-ui_semilight, "Segoe UI Semilight", "Segoe WP Semilight", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+        font-style: normal;
+        font-size: 10px;
+        color: #ea0000;
+        line-height: 20px;
+    }
+    
+    .getPC{
+        font-family: wf_segoe-ui_semilight, "Segoe UI Semilight", "Segoe WP Semilight", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+        font-style: normal;
+        font-size: 10px;
+        color: #302f2f;
+        line-height: 20px;
+    }
+}
+/*======================================*/
+
+.pg-normal { 
+    color: #0000FF; 
+    font-weight: normal; 
+    text-decoration: none; 
+    cursor: pointer; 
+} 
+
+.pg-selected { 
+    color: #800080; 
+    font-weight: bold; 
+    text-decoration: underline; 
+    cursor: pointer; 
+} 
+
+
+
